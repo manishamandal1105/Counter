@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: blanchedalmond;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    #count {
+      font-size: 60px;
+      font-weight: bold;
+      color: rgb(55, 55, 55);
+      padding: 20px 50px;
+      background-color: whitesmoke;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border: 2px solid #e0cfa9;
+      margin-bottom: 30px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 24px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: transform 0.5s ease;
+    }
+
+    button:hover {
+      transform: scale(1.15);
+    }
+
+    #inc {
+      background: linear-gradient(135deg, #4CAF50, #2e8b57);
+    }
+
+    #dec {
+      background: linear-gradient(135deg, #d00000, #8b0000);
+    }
+
+    #reset {
+      background: linear-gradient(135deg, #444, #222);
+      margin-top: 20px;
+    }
+
+    #inc:hover {
+      background: linear-gradient(135deg, #7ed957, #4CAF50);
+    }
+
+    #dec:hover {
+      background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    }
+
+    #reset:hover {
+      background: linear-gradient(135deg, #999, #333);
+    }
+  </style>
+</head>
+<body>
+  <h1 id="count">Count: 0</h1>
+
+  <div class="button-row">
+    <button id="inc">Increment</button>
+    <button id="dec">Decrement</button>
+  </div>
+  <button id="reset">Reset</button>
+
+  <script>
+    let count = 0;
+    let display = document.getElementById("count");
+    let incBtn = document.getElementById("inc");
+    let decBtn = document.getElementById("dec");
+    let resetBtn = document.getElementById("reset");
+
+    incBtn.addEventListener("click", () => {
+      count++;
+      display.textContent = "Count: " + count;
+    });
+
+    decBtn.addEventListener("click", () => {
+      count--;
+      display.textContent = "Count: " + count;
+    });
+
+    resetBtn.addEventListener("click", () => {
+      count = 0;
+      display.textContent = "Count: " + count;
+    });
+  </script>
+</body>
+</html>
